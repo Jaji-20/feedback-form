@@ -1,0 +1,52 @@
+<!-- SIMPLER VERSION (If the above doesn't work, use this) -->
+<div style="font-family: Arial, sans-serif; font-size: 14px; color: #212121; max-width: 600px; margin: auto">
+  
+  <!-- Header -->
+  <div style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+    <h1 style="color: white; margin: 0; font-size: 24px;">📋 New Feedback Received</h1>
+    <p style="color: white; margin: 10px 0 0 0; font-size: 16px;">From: <strong>{{from_name}}</strong> ({{from_email}})</p>
+  </div>
+
+  <!-- Content -->
+  <div style="background-color: #f9fafb; padding: 20px;">
+    
+    <!-- Submitter Info -->
+    <div style="background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+      <h2 style="margin-top: 0; color: #1f2937; font-size: 18px;">👤 Submitter Information</h2>
+      <p style="margin: 10px 0;"><strong>Name:</strong> {{from_name}}</p>
+      <p style="margin: 10px 0; font-size: 16px;">
+        <strong style="color: #6366f1;">📧 Sender Email:</strong> 
+        <a href="mailto:{{from_email}}" style="color: #6366f1; font-weight: bold; text-decoration: none; font-size: 16px;">{{from_email}}</a>
+      </p>
+      <p style="margin: 10px 0;"><strong>Submitted:</strong> {{timestamp}}</p>
+      <div style="background: #f0f9ff; padding: 12px; border-radius: 6px; margin-top: 15px; border: 1px solid #6366f1;">
+        <p style="margin: 0; color: #1e40af; font-size: 14px;">
+          <strong>💡 Quick Reply:</strong> Click "Reply" in your email client to respond directly to {{from_email}}
+        </p>
+      </div>
+    </div>
+
+    <!-- Feedback Details -->
+    <div style="background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+      <h2 style="margin-top: 0; color: #1f2937; font-size: 18px;">📊 Feedback Details</h2>
+      <p><strong>Category:</strong> {{category}}</p>
+      <p><strong>Rating:</strong> {{rating}}/5 stars</p>
+    </div>
+
+    <!-- Message -->
+    <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #6366f1;">
+      <h2 style="margin-top: 0; color: #1f2937; font-size: 18px;">💬 Feedback Message</h2>
+      <div style="background: #f3f4f6; padding: 15px; border-radius: 5px; margin-top: 10px;">
+        <p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">{{message}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); padding: 20px; text-align: center; border-radius: 0 0 10px 10px; color: white;">
+    <p style="margin: 5px 0; color: white; font-size: 16px;"><strong>Reply to: {{from_email}}</strong></p>
+    <p style="margin: 10px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">Click "Reply" to respond directly to {{from_name}} ({{from_email}})</p>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+═══════════════════════════════════════════════════════
+📋 NEW FEEDBACK RECEIVED
+═══════════════════════════════════════════════════════
+
+👤 SUBMITTER INFORMATION
+───────────────────────────────────────────────────────
+Name: {{from_name}}
+Email: {{from_email}}
+Submitted: {{timestamp}}
+
+📊 FEEDBACK DETAILS
+───────────────────────────────────────────────────────
+Category: {{category}}
+Rating: {{rating}}/5 stars
+
+💬 FEEDBACK MESSAGE
+───────────────────────────────────────────────────────
+{{message}}
+
+═══════════════════════════════════════════════════════
+You can reply directly to this email to respond to {{from_name}}.
+═══════════════════════════════════════════════════════

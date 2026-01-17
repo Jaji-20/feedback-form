@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form - Share Your Thoughts</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="feedback-card">
+            <div class="card-header">
+                <div class="icon-wrapper">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1>Share Your Feedback</h1>
+                <p>We value your opinion and would love to hear from you!</p>
+            </div>
+
+            <form id="feedbackForm" class="feedback-form">
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name">
+                        <span class="label-text">Your Name</span>
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="name">
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">
+                        <span class="label-text">Email Address</span>
+                        <span class="required">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" autocomplete="email">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- Category Selection -->
+                <div class="form-group">
+                    <label for="category">
+                        <span class="label-text">Feedback Category</span>
+                        <span class="required">*</span>
+                    </label>
+                    <select id="category" name="category">
+                        <option value="">Select a category</option>
+                        <option value="general">General Feedback</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="improvement">Improvement Suggestion</option>
+                        <option value="compliment">Compliment</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="error-message" id="categoryError"></span>
+                </div>
+
+                <!-- Rating Section -->
+                <div class="form-group">
+                    <label>
+                        <span class="label-text">How would you rate your experience?</span>
+                        <span class="required">*</span>
+                    </label>
+                    <div class="rating-container">
+                        <div class="rating-options">
+                            <input type="radio" id="rating5" name="rating" value="5">
+                            <label for="rating5" class="rating-label">
+                                <span class="rating-emoji">😍</span>
+                                <span class="rating-text">Excellent</span>
+                            </label>
+                            
+                            <input type="radio" id="rating4" name="rating" value="4">
+                            <label for="rating4" class="rating-label">
+                                <span class="rating-emoji">😊</span>
+                                <span class="rating-text">Good</span>
+                            </label>
+                            
+                            <input type="radio" id="rating3" name="rating" value="3">
+                            <label for="rating3" class="rating-label">
+                                <span class="rating-emoji">😐</span>
+                                <span class="rating-text">Average</span>
+                            </label>
+                            
+                            <input type="radio" id="rating2" name="rating" value="2">
+                            <label for="rating2" class="rating-label">
+                                <span class="rating-emoji">😕</span>
+                                <span class="rating-text">Poor</span>
+                            </label>
+                            
+                            <input type="radio" id="rating1" name="rating" value="1">
+                            <label for="rating1" class="rating-label">
+                                <span class="rating-emoji">😞</span>
+                                <span class="rating-text">Very Poor</span>
+                            </label>
+                        </div>
+                    </div>
+                    <span class="error-message" id="ratingError"></span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">
+                        <span class="label-text">Your Feedback</span>
+                        <span class="required">*</span>
+                    </label>
+                    <textarea id="message" name="message" rows="5" placeholder="Please share your thoughts, suggestions, or concerns..."></textarea>
+                    <div class="char-count">
+                        <span id="charCount">0</span> characters
+                    </div>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Submit Feedback</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2>Thank You!</h2>
+                <p>Thanks for sharing your experience! Your feedback has been submitted successfully.</p>
+                <button type="button" class="reset-btn" id="resetBtn">Submit Another Feedback</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>

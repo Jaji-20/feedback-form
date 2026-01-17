@@ -1,0 +1,82 @@
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 14px; color: #212121">
+  <div style="max-width: 600px; margin: auto">
+    <div
+      style="
+        text-align: center;
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        padding: 32px 16px;
+        border-radius: 32px 32px 0 0;
+      "
+    >
+      <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 600">
+        📋 New Feedback Received
+      </h1>
+    </div>
+    
+    <div style="padding: 24px; background-color: #f9fafb">
+      <div style="background-color: white; padding: 24px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <h2 style="font-size: 20px; margin-bottom: 20px; color: #1f2937; border-bottom: 2px solid #6366f1; padding-bottom: 10px">
+          👤 Submitter Information
+        </h2>
+        <p style="margin: 12px 0; line-height: 1.6">
+          <strong style="color: #6366f1">Name:</strong> {{from_name}}
+        </p>
+        <p style="margin: 12px 0; line-height: 1.6">
+          <strong style="color: #6366f1">Email:</strong> 
+          <a href="mailto:{{from_email}}" style="color: #6366f1; text-decoration: none">{{from_email}}</a>
+        </p>
+        <p style="margin: 12px 0; line-height: 1.6">
+          <strong style="color: #6366f1">Submitted:</strong> {{timestamp}}
+        </p>
+      </div>
+
+      <div style="background-color: white; padding: 24px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <h2 style="font-size: 20px; margin-bottom: 20px; color: #1f2937; border-bottom: 2px solid #6366f1; padding-bottom: 10px">
+          📊 Feedback Details
+        </h2>
+        <p style="margin: 12px 0; line-height: 1.6">
+          <strong style="color: #6366f1">Category:</strong> {{category}}
+        </p>
+        <p style="margin: 12px 0; line-height: 1.6">
+          <strong style="color: #6366f1">Rating:</strong> 
+          <span style="color: #f59e0b; font-size: 18px">
+            {{#if (eq rating "5")}}⭐⭐⭐⭐⭐ Excellent{{/if}}
+            {{#if (eq rating "4")}}⭐⭐⭐⭐ Good{{/if}}
+            {{#if (eq rating "3")}}⭐⭐⭐ Average{{/if}}
+            {{#if (eq rating "2")}}⭐⭐ Poor{{/if}}
+            {{#if (eq rating "1")}}⭐ Very Poor{{/if}}
+          </span>
+          <span style="color: #6b7280; margin-left: 8px">({{rating}}/5)</span>
+        </p>
+      </div>
+
+      <div style="background-color: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <h2 style="font-size: 20px; margin-bottom: 20px; color: #1f2937; border-bottom: 2px solid #6366f1; padding-bottom: 10px">
+          💬 Feedback Message
+        </h2>
+        <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; border-left: 4px solid #6366f1; margin-top: 12px">
+          <p style="margin: 0; white-space: pre-wrap; line-height: 1.8; color: #1f2937">
+            {{message}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="
+        text-align: center;
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        padding: 24px 16px;
+        border-radius: 0 0 32px 32px;
+        color: white;
+      "
+    >
+      <p style="margin: 8px 0; color: white">
+        <strong>Reply to this email to respond to {{from_name}}</strong>
+      </p>
+      <p style="margin: 8px 0; font-size: 12px; color: rgba(255,255,255,0.8)">
+        This is an automated notification from your feedback form.
+      </p>
+    </div>
+  </div>
+</div>
